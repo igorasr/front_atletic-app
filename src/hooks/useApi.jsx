@@ -1,9 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const API_HOST = process.env.API_HOST;
-const TOKEN = process.env.TOKEN;
-
 export function useApi(url, method = "GET") {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -17,6 +14,7 @@ export function useApi(url, method = "GET") {
   const fetchingData = async () => {
     await api(url)
       .then((response) => {
+        console.log(response.data);
         setData(response.data);
       })
       .catch((exception) => {
@@ -28,7 +26,9 @@ export function useApi(url, method = "GET") {
   };
 
   useEffect(() => {
-    fetchingData();
+    setTimeout(() => {
+      fetchingData();
+    }, 2000);
   }, []);
 
   return { data, error, isFetching };

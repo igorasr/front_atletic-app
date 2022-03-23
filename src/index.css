@@ -1,0 +1,24 @@
+
+/* FONT IMPORT BY GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/* STANDARD STYLING SETTINGS */
+:root{
+    /* COLORS */
+    --primary-color: #E61C20;
+    --primary-color-light:#FF2021;
+    
+    /* FONT CONFIG */
+    --font-size-text: 16px;
+    --font-family-primary: 'Ubuntu', sans-serif;
+
+
+}
+
+*{
+    font-family: var(--font-family-primary);  
+    font-size: var(--font-size-text);  
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}

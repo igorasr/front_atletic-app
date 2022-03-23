@@ -15,10 +15,20 @@
 
 }
 
+/* SETTING UP AND RESET DEFAULTS CONFIGS */
+
 *{
     font-family: var(--font-family-primary);  
     font-size: var(--font-size-text);  
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

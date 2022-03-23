@@ -1,5 +1,8 @@
+//Importing libs or native resources
 import axios from "axios";
 import { useEffect, useState } from "react";
+//Import of own components and project resources
+import { env } from "../constants";
 
 export function useApi(url, method = "GET") {
   const [data, setData] = useState(null);
@@ -8,7 +11,7 @@ export function useApi(url, method = "GET") {
 
   const api = axios.create({
     method: method,
-    baseURL: "https://viacep.com.br/ws",
+    baseURL: env.API_HOST,
   });
 
   const fetchingData = async () => {
@@ -28,7 +31,7 @@ export function useApi(url, method = "GET") {
   useEffect(() => {
     setTimeout(() => {
       fetchingData();
-    }, 2000);
+    }, 10000);
   }, []);
 
   return { data, error, isFetching };

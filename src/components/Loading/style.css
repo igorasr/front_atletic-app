@@ -1,13 +1,9 @@
-.wrapper{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#wrapper-loading{
+    position: fixed;
     z-index: 99;
+    background-color: rgba(0, 0, 0, 0.5);
 }
-.loadingIcon{
+#loadingIcon{
     width: 100px;
     height: 100px;
     background-color: transparent;

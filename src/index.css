@@ -11,12 +11,9 @@
     /* FONT CONFIG */
     --font-size-text: 16px;
     --font-family-primary: 'Ubuntu', sans-serif;
-
-
 }
 
 /* SETTING UP AND RESET DEFAULTS CONFIGS */
-
 *{
     font-family: var(--font-family-primary);  
     font-size: var(--font-size-text);  
@@ -25,10 +22,19 @@
     box-sizing: border-box;
 }
 
+/* GENERIC CSS CLASSES */
+
 .wrapper{
     width: 100vw;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container{
+    width: 100%;
+    padding: 1rem;
 }

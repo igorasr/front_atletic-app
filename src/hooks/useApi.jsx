@@ -4,20 +4,23 @@ import { useEffect, useState } from "react";
 //Import of own components and project resources
 import { env } from "../constants";
 
-export function useApi(url, method = "GET") {
+export function useApi(url, method = "GET", params) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isFetching, setIsFetching] = useState(true);
 
   const api = axios.create({
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
     method: method,
     baseURL: env.API_HOST,
+    data: method !== "GET" && params ? JSON.stringify(params) : undefined,
   });
 
-  const fetchingData = async () => {
-    await api(url)
+  useEffect(() => {
+    api(url)
       .then((response) => {
-        console.log(response.data);
         setData(response.data);
       })
       .catch((exception) => {
@@ -26,13 +29,7 @@ export function useApi(url, method = "GET") {
       .finally(() => {
         setIsFetching(false);
       });
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      fetchingData();
-    }, 10000);
-  }, []);
+  }, [url]);
 
   return { data, error, isFetching };
 }

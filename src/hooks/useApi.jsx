@@ -3,21 +3,26 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 //Import of own components and project resources
 import { env } from "../constants";
+import useLocalStorage from "../hooks/useLocalStorage";
 
-export function useApi(url, method = "GET", params) {
+export default function useApi(url, method = "GET", params) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isFetching, setIsFetching] = useState(true);
 
+  //Geting the allocated token with no local storage
+  const [token, setToken] = useLocalStorage("token");
+
   const api = axios.create({
     headers: {
       "Content-type": "application/json; charset=UTF-8",
+      Authorization: `Bearer ${token}`,
     },
     method: method,
     baseURL: env.API_HOST,
     data: method !== "GET" && params ? JSON.stringify(params) : undefined,
   });
-
+  console.log(token.Id);
   useEffect(() => {
     api(url)
       .then((response) => {

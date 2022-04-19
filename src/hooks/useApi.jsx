@@ -10,8 +10,8 @@ export default function useApi(url, method = "GET", params) {
   const [error, setError] = useState(null);
   const [isFetching, setIsFetching] = useState(true);
 
-  //Geting the allocated token with no local storage
-  const [token, setToken] = useLocalStorage("token");
+  //Geting the allocated token with local storage
+  const [token] = useLocalStorage("token");
 
   const api = axios.create({
     headers: {
@@ -22,7 +22,6 @@ export default function useApi(url, method = "GET", params) {
     baseURL: env.API_HOST,
     data: method !== "GET" && params ? JSON.stringify(params) : undefined,
   });
-  console.log(token.Id);
   useEffect(() => {
     api(url)
       .then((response) => {

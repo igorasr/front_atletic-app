@@ -1,0 +1,31 @@
+#wrapper-login{
+    background: var(--default-gradient);
+}
+
+
+#card-login{
+    position: relative;
+    width: 450px;
+    height: 500px;
+
+    max-width: 600px;
+    max-height: 650px;
+
+    background-color: white;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    text-align: center;
+}
+
+#logo{
+    position: absolute;
+    top: 30px;
+}
+
+

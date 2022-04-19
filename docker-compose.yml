@@ -1,11 +1,10 @@
 version: '3.7'
 services:
   front:
+    build: .
     container_name: front_atletic-app
-    image: atletic-app
     ports:
       - '3000:3000'
     volumes:
       - '.:/app'
-    working_dir: /app/front_atletic-app
     command: 'npm start'

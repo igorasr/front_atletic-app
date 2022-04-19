@@ -7,6 +7,8 @@
     /* COLORS */
     --primary-color: #E61C20;
     --primary-color-light:#FF2021;
+
+    --default-gradient: linear-gradient(to right top, #ff2021, #e81827, #d01229, #b8102b, #a0102a);
     
     /* FONT CONFIG */
     --font-size-text: 16px;
@@ -20,6 +22,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html, body, #root{
+    height: 100%;
 }
 
 /* GENERIC CSS CLASSES */
@@ -37,4 +43,44 @@
 .container{
     width: 100%;
     padding: 1rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 576px){
+    
+    .container{
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px){
+
+    .container{
+        max-width: 720px;
+    }
+
+}
+
+@media (min-width: 992px){
+
+    .container{
+        max-width: 960px;
+    }
+
+}
+
+@media (min-width: 1200px){
+
+    .container{
+        max-width: 1140px;
+    }
+
+}
+
+@media (min-width: 1400px){
+
+    .container{
+        max-width: 1320px;
+    }
+
 }

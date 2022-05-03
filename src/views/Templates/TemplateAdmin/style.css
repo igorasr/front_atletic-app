@@ -1,0 +1,81 @@
+#header{
+    width: 100%;
+    background-color: aqua;
+    text-align: center;
+}
+.Logo{
+    height: 75px;
+    width: 75px;
+}
+
+.Logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#avatar{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+#header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header-menu{
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ gap: 2rem;
+}
+
+#search{
+    outline: none;
+    border: none;
+    height: 2rem;
+    border-radius: 5px;
+    padding: 5px;
+    background: #c3c3c3;
+}
+
+
+#main{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 50px 95%;
+    grid-template-areas:
+    "navbar navbar navbar navbar"
+     "left feed feed right"
+     
+
+     
+}
+
+#main-navbar{
+    grid-area: navbar;
+    text-align: center;
+    background: orange;
+}
+#main-navbar ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+#main #left{
+    grid-area: left;
+    background: red;
+}
+#main #center{
+    grid-area: feed;
+    background: blue;
+}
+#main #right{
+    grid-area: right;
+    background: pink;
+}

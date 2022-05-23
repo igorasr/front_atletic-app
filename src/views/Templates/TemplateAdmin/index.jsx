@@ -1,9 +1,8 @@
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import { BsCalendarEvent, BsNewspaper, BsShop } from 'react-icons/bs';
+import "react-calendar/dist/Calendar.css";
+import { BsCalendarEvent, BsNewspaper, BsShop } from "react-icons/bs";
+import { Link, Outlet } from "react-router-dom";
 import Avatar from "../../../assets/images/img-avatar.png";
 import Logo from "../../../assets/images/logo-atletica.png";
-import Card from '../../../components/Card';
 import "./style.css";
 
 export default function TemplateAdmin() {
@@ -35,50 +34,35 @@ export default function TemplateAdmin() {
         </nav>
       </header>
       <main id="main" className="container">
-      <section id="main-navbar">
-          <ul >
-              <li>
-                <a href="#">
-                  <BsCalendarEvent/><br />
-                  Eventos
-                  </a>
-              </li>
-              <li>
-                <a href="#">
-                  <BsNewspaper/><br />
-                  Feed
-                  </a>
-              </li>
-              <li>
-                <a href="#">
-                  <BsShop/><br />
-                  Produtos
-                  </a>
-              </li>
+        <section id="main-navbar">
+          <ul>
+            <li>
+              <a href="#">
+                <BsCalendarEvent />
+                <br />
+                Eventos
+              </a>
+            </li>
+            <li>
+            <Link to={"feed"}>
+            <BsNewspaper />
+                <br />
+                Feed
+              </Link>
+            
+            </li>
+            <li>
+              <Link to={"shopping"}>
+                <BsShop />
+                <br />
+                Produtos
+              </Link>
+            </li>
           </ul>
-      </section>
-        <section id="left">
-          <div id="calendario">
-          <Calendar/>
-
-
-          </div>
-
         </section>
-        <section id="center">
-
-          <Card/>
-          <Card/>
-
-          <Card/>
-
-          <Card/>
-
-          <Card/>
-
-
+        <section className="content">
+          <Outlet/>
         </section>
-        <section id="right"></section>
       </main>
     </>
   );

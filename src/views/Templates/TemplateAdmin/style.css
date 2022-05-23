@@ -1,7 +1,14 @@
 #header{
     width: 100%;
-    background-color: aqua;
+    background: var(--default-gradient);
     text-align: center;
+
+    position: fixed;
+    z-index: 99999;
+
+    top: 0;
+    left: 0;
+    right: 0;
 }
 .Logo{
     height: 75px;
@@ -21,6 +28,7 @@
 }
 
 #header-content {
+    padding: .5rem;
     display: flex;
     justify-content: space-between;
 }
@@ -38,7 +46,7 @@
     height: 2rem;
     border-radius: 5px;
     padding: 5px;
-    background: #c3c3c3;
+  
 }
 
 
@@ -49,8 +57,9 @@
     grid-template-columns: repeat(3, 30%);
     grid-template-areas:
     "navbar navbar navbar navbar"
-     "left feed feed right"
-          
+     "content content content content";
+     margin-top: 100px;
+
 }
 
 #main-navbar{
@@ -69,26 +78,14 @@
 #main-navbar ul li a{
     font-size: 1.2rem;
 }
-#main #left{
-    grid-area: left;
-
+#main .content{
+    grid-area: content;
+    max-height: 75vh;
+    overflow-y: scrol;
 }
-#main #center{
-    grid-area: feed;
-    padding: 0 15px;
-    max-height: 100%;
-    overflow: scroll;
-}
-
-#main #center::-webkit-scrollbar{
+#main .content::-webkit-scrollbar{
     display: none;
 }
-
-
-#main #right{
-    grid-area: right;
-}
-
 
 #calendario{
     width: 100%;

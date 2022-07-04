@@ -1,7 +1,7 @@
 import { useRoutes } from "react-router-dom";
-import App from "../views/";
+
 import ProductsPage from "../views/ProductsPage";
-import TemplateAdmin from "../views/Templates/TemplateAdmin";
+import TemplateDefault from "../views/Templates/TemplateDefault";
 import FeedPage from './../views/FeedPage/index';
 import LoginPage from './../views/LoginPage/index';
 
@@ -9,17 +9,17 @@ const Routers = () => {
   return useRoutes([
     {
       path: "/",
-      element: <App />,
+      element: <LoginPage />,
     },
     {
       path: "/login",
       element: <LoginPage />,
     },
     {
-      path: "admin",
-      element: <TemplateAdmin/>,
+      path: "app",
+      element: <TemplateDefault/>,
       children: [
-        {path: 'feed', element: <FeedPage/> },
+        {index: true, element: <FeedPage/> },
         {path: 'shopping', element: <ProductsPage/> }
       ]
     }

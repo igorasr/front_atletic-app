@@ -29,6 +29,9 @@ a{
     text-decoration: none;
     color: initial;
 }
+body{
+    background: rgb(243, 241, 241);
+}
 
 html, body, #root{
     height: 100%;
@@ -53,7 +56,7 @@ body::-webkit-scrollbar{
 
 .container{
     width: 100%;
-    padding: 1rem;
+    padding: .5rem;
     margin: 0 auto;
 }
 
